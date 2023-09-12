@@ -15,6 +15,8 @@
 		7A5C54722AAF742F00C64C65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5C54702AAF742F00C64C65 /* LaunchScreen.storyboard */; };
 		7A5C547B2AAF80F800C64C65 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C547A2AAF80F800C64C65 /* Const.swift */; };
 		7A5C547E2AAF85C900C64C65 /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C547D2AAF85C900C64C65 /* TV.swift */; };
+		7A5C54802AB0809A00C64C65 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C547F2AB0809A00C64C65 /* Movie.swift */; };
+		7A5C54822AB0864200C64C65 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C54812AB0864200C64C65 /* MovieResult.swift */; };
 		CFF277C4D011386F72356630 /* Pods_MVVMPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A207FCEC4A24B57ABA3E82CF /* Pods_MVVMPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		7A5C54732AAF742F00C64C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A5C547A2AAF80F800C64C65 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		7A5C547D2AAF85C900C64C65 /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
+		7A5C547F2AB0809A00C64C65 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7A5C54812AB0864200C64C65 /* MovieResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
 		A207FCEC4A24B57ABA3E82CF /* Pods_MVVMPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F7F42EF03121A53616D169 /* Pods-MVVMPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMPractice.release.xcconfig"; path = "Target Support Files/Pods-MVVMPractice/Pods-MVVMPractice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				7A5C547D2AAF85C900C64C65 /* TV.swift */,
+				7A5C547F2AB0809A00C64C65 /* Movie.swift */,
+				7A5C54812AB0864200C64C65 /* MovieResult.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -228,8 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5C54822AB0864200C64C65 /* MovieResult.swift in Sources */,
 				7A5C546A2AAF742E00C64C65 /* ViewController.swift in Sources */,
 				7A5C547B2AAF80F800C64C65 /* Const.swift in Sources */,
+				7A5C54802AB0809A00C64C65 /* Movie.swift in Sources */,
 				7A5C54662AAF742E00C64C65 /* AppDelegate.swift in Sources */,
 				7A5C547E2AAF85C900C64C65 /* TV.swift in Sources */,
 				7A5C54682AAF742E00C64C65 /* SceneDelegate.swift in Sources */,
