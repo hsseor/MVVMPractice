@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxAlamofire
 
-//(1) 네트워크를 생성할 때 지정했던 T타입(=디코더블한 movie, tv list)
+//(1) 네트워크를 생성할 때 지정했던 T타입(=디코더블한 movie & tv list)
 class Network <T:Decodable> {
     
     private let endpoint: String
