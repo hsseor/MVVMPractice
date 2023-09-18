@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         setUI()
         bindViewModel()
         bindView()
+        tvTrigger.onNext(()) //아무것도 누르지 않아도 tv 데이터가 화면에 뜸
         
         //ex. (3)onNext를 통해서 이벤트 전달가능,구독
         //tvTrigger.onNext(Void())
@@ -53,12 +54,17 @@ class ViewController: UIViewController {
         let input = ViewModel.Input(tvTrigger: tvTrigger.asObservable(), movieTrigger: movieTrigger.asObservable())
         
         //여기서 받아야할 타입은 observable.이 안에서 observable을 전이하면 버튼에서도 발생하는 이벤트를 구독해서 보내줄 수 없어서. subject사용
-        //⭐️2⭐️발생했을 때 이걸 보고 있던 viewModel이
+        //⭐️2⭐️발생했을 때 이걸 보고 있던 viewModel이 viewModel에서 보낸 output 을 받아서 print
         let output = viewModel.transform(input: input)
         
         output.tvList.bind { tvList in
-            print(tvList)
+            print("TV List \(tvList)")
         }.disposed(by: disposeBag)
+        
+        output.movieResult.bind { MovieResult in
+            print("Movie List \(MovieResult)")
+        }.disposed(by: disposeBag)
+        
     }
     
     //tv버튼을 눌렀을 때 tvtrigger가 이벤트를 발생시키도록 함⭐️1⭐️
@@ -66,6 +72,10 @@ class ViewController: UIViewController {
         //bind는 escaping 클로저 이기 때문에 weak self & self 참조
         buttonView.tvButton.rx.tap.bind { [weak self] in
             self?.tvTrigger.onNext(Void())
+        }.disposed(by: disposeBag)
+        
+        buttonView.movieButton.rx.tap.bind { [weak self] in
+            self?.movieTrigger.onNext(Void())
         }.disposed(by: disposeBag)
     }
 
