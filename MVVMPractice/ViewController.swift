@@ -9,6 +9,17 @@ import UIKit
 import SnapKit
 import RxSwift
 
+//section은 하나의 레이아웃을 구현할 때를 기준으로 나눈다.
+enum Section: Hashable {
+    //(TV)하나의 행에 두 개의 셀이 들어가기 때문에 double로 명명.
+    case double
+}
+
+//Item은 Cell을 기준으로 나눈다. 해당 레이아웃에 어떤 Item을 쓸 지(이 item을 쓸 거다 = 이 Cell을 쓸 거다)
+enum Item : Hashable{
+    case normal(TV)
+}
+
 //ViewController는 Buttonview에서 일어나는 이벤트를 구독하면서도 전달해야함
 class ViewController: UIViewController {
     //해당 뷰컨이 메모리에서 해제가 될 때 구독도 해제
