@@ -23,6 +23,7 @@
 		7A5C54902AB1D3B700C64C65 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C548F2AB1D3B700C64C65 /* NetworkProvider.swift */; };
 		7A84B49F2AB88A0D00845EF4 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A84B49D2AB856B200845EF4 /* ButtonView.swift */; };
 		7A84B4A12AB88A3C00845EF4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A84B4A02AB88A3C00845EF4 /* ViewModel.swift */; };
+		7A84B4DC2ABF078F00845EF4 /* NormalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A84B4DB2ABF078F00845EF4 /* NormalCollectionViewCell.swift */; };
 		CFF277C4D011386F72356630 /* Pods_MVVMPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A207FCEC4A24B57ABA3E82CF /* Pods_MVVMPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		7A5C548F2AB1D3B700C64C65 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		7A84B49D2AB856B200845EF4 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		7A84B4A02AB88A3C00845EF4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		7A84B4DB2ABF078F00845EF4 /* NormalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCollectionViewCell.swift; sourceTree = "<group>"; };
 		A207FCEC4A24B57ABA3E82CF /* Pods_MVVMPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F7F42EF03121A53616D169 /* Pods-MVVMPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMPractice.release.xcconfig"; path = "Target Support Files/Pods-MVVMPractice/Pods-MVVMPractice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 		7A5C54642AAF742E00C64C65 /* MVVMPractice */ = {
 			isa = PBXGroup;
 			children = (
+				7A84B4DA2ABF078100845EF4 /* Cell */,
 				7A5C54792AAF80EA00C64C65 /* Network */,
 				7A5C54692AAF742E00C64C65 /* ViewController.swift */,
 				7A84B4A02AB88A3C00845EF4 /* ViewModel.swift */,
@@ -127,6 +130,14 @@
 				7A5C54812AB0864200C64C65 /* MovieResult.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		7A84B4DA2ABF078100845EF4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A84B4DB2ABF078F00845EF4 /* NormalCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E86A4A2C6FB344E2BF1D00D1 /* Frameworks */ = {
@@ -255,6 +266,7 @@
 				7A5C54822AB0864200C64C65 /* MovieResult.swift in Sources */,
 				7A5C546A2AAF742E00C64C65 /* ViewController.swift in Sources */,
 				7A84B49F2AB88A0D00845EF4 /* ButtonView.swift in Sources */,
+				7A84B4DC2ABF078F00845EF4 /* NormalCollectionViewCell.swift in Sources */,
 				7A5C54852AB0874500C64C65 /* Network.swift in Sources */,
 				7A5C548C2AB1CBC600C64C65 /* TVNetwork.swift in Sources */,
 				7A5C547B2AAF80F800C64C65 /* Const.swift in Sources */,

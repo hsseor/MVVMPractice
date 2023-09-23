@@ -25,7 +25,14 @@ class ViewController: UIViewController {
     //해당 뷰컨이 메모리에서 해제가 될 때 구독도 해제
     let disposeBag = DisposeBag()
     let buttonView = ButtonView()
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    
+    //NormalCollectionViewCell을 등록
+    let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.register(NormalCollectionViewCell.self, forCellWithReuseIdentifier: NormalCollectionViewCell.id)
+        return collectionView
+    }()
+
     let viewModel = ViewModel()
     //Subject - 이벤트를 발생시키면서 observable형태도 되는 거. 이걸통해(1)
     let tvTrigger = PublishSubject<Void>()
