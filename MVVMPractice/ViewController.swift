@@ -24,6 +24,7 @@ enum Item : Hashable{
 class ViewController: UIViewController {
     //해당 뷰컨이 메모리에서 해제가 될 때 구독도 해제
     let disposeBag = DisposeBag()
+    private var dataSource: UICollectionViewDiffableDataSource<Section,Item>?
     let buttonView = ButtonView()
     
     //NormalCollectionViewCell을 등록
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setDataSource()
         bindViewModel()
         bindView()
         tvTrigger.onNext(()) //아무것도 누르지 않아도 tv 데이터가 화면에 뜸
@@ -54,9 +56,7 @@ class ViewController: UIViewController {
     private func setUI() {
         self.view.addSubview(buttonView)
         self.view.addSubview(collectionView)
-        
-        collectionView.backgroundColor = .blue
-        
+
         buttonView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
             make.height.equalTo(80)
@@ -78,6 +78,12 @@ class ViewController: UIViewController {
         
         output.tvList.bind { tvList in
             print("TV List \(tvList)")
+            var snapshot = NSDiffableDataSourceSnapshot<Section,Item>()
+            let items = tvList.map { Item.normal($0)}
+            let section = Section.double
+            snapshot.appendSections([section])
+            snapshot.appendItems(items, toSection: section)
+            self.dataSource?.apply(snapshot)
         }.disposed(by: disposeBag)
         
         output.movieResult.bind { MovieResult in
@@ -115,6 +121,18 @@ class ViewController: UIViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         let section = NSCollectionLayoutSection(group: group)
         return section
+    }
+    
+    private func setDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, IndexPath, item in
+            switch item {
+            case .normal(let tvData):
+               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalCollectionViewCell.id, for: IndexPath) as? NormalCollectionViewCell
+                cell?.configure(title: tvData.name, review: tvData.vote, desc: tvData.overview, imageURL: tvData.posterURL)
+                return cell
+                
+            }
+        })
     }
 }
 
